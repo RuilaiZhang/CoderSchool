@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'stock_quote', '~> 3.0'
 gem 'devise', '~> 4.8'
+gem 'role_model', '~> 0.8.2'
 
 gem 'bootsnap', '>= 1.4.4', require: false
 
