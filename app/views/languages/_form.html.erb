@@ -1,0 +1,26 @@
+<%= form_with(model: language) do |form| %>
+  <% if language.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(language.errors.count, "error") %> prohibited this language from being saved:</h2>
+
+      <ul>
+        <% language.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :course_name %>
+    <%= form.text_field :course_name, id: :language_course_name %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :user_id, id: :language_user_id, value: current_user.id, type: :hidden %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
