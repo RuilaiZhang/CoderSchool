@@ -1,0 +1,18 @@
+<h1>Coder School</h1>
+
+<%= form_tag root_path, :method => 'Post' do %>
+    <%= text_field_tag 'ticker', nil, placeholder: "Enter Ticker Symbol", size: 50 %>
+    <%= submit_tag 'Lookup' %>
+<% end %>
+
+<% if @stock %>
+    <%= @stock.company_name %><br/>
+    $<%= @stock.latest_price %>
+<% elsif @nothing %>
+    <%= @nothing %>
+<% end %>
+
+
+<% if @error %>
+  <%= @error %>
+<% end %>
